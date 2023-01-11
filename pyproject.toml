@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "gpt-jax"
+version = "0.1.0"
+description = ""
+authors = ["jaymody <jaykmody@gmail.com>"]
+readme = "README.md"
+packages = [{include = "gpt_jax"}]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.12"
+jax = {extras = ["cpu"], version = "^0.4.1"}
+tqdm = "^4.64.1"
+requests = "^2.28.1"
+jaxtyping = "^0.2.11"
+tensorflow = {version = "^2.11.0", platform = "linux"}
+tensorflow-macos = {version = "^2.11.0", platform = "darwin"}
+regex = "2017.4.5"
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.20.1"
+black = "^22.12.0"
+pylint = "^2.15.10"
+isort = "^5.11.4"
+pytest = "^7.2.0"
+typeguard = "^2.13.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.isort]
+profile = "black"
+
+[tool.pylint.messages_control]
+disable = ["C", "R"]
+generated-members = ["torch"]
